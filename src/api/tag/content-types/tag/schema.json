@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "comics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comic.comic",
+      "inversedBy": "tags"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    }
+  }
+}

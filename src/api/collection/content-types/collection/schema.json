@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "comics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comic.comic",
+      "inversedBy": "collections"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    }
+  }
+}
